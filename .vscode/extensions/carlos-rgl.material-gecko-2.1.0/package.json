@@ -1,0 +1,71 @@
+{
+	"name": "material-gecko",
+	"displayName": "Material Gecko",
+	"description": "Another material theme for fancy italic fonts",
+	"version": "2.1.0",
+	"publisher": "carlos-rgl",
+	"engines": {
+		"vscode": "^1.27.0"
+	},
+	"icon": "images/logo.png",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/CarlosRGL/material-gecko-vscode"
+	},
+	"galleryBanner": {
+		"color": "#414141",
+		"theme": "dark"
+	},
+	"categories": [
+		"Themes"
+	],
+	"keywords": [
+		"Dark Theme",
+		"VSCode Power User",
+		"Operator Mono",
+		"Material Theme"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"label": "Material Gecko",
+				"uiTheme": "vs-dark",
+				"path": "./themes/Material Gecko-color-theme.json"
+			}
+		]
+	},
+	"devDependencies": {
+		"auto-changelog": "^1.11.0",
+		"nodemon": "^1.18.9",
+		"release-it": "^10.1.0"
+	},
+	"auto-changelog": {
+		"output": "CHANGELOG.md",
+		"template": "clTemplate.hbs",
+		"commitLimit": false,
+		"package": true,
+		"replaceText": {
+			"FIX: ": "",
+			"NEW: ": "",
+			"IMPROVE: ": "",
+			"DOC: ": ""
+		}
+	},
+	"scripts": {
+		"start": "nodemon --exec vsce package",
+		"log": "auto-changelog && git add . && git commit -m ' 📖 DOC: Update the changelog' && git push",
+		"release": "release-it && npx vsce publish",
+		"release-major": "release-it major && npx vsce publish",
+		"release-dry": "release-it --dry-run"
+	},
+	"__metadata": {
+		"id": "53c6bcc5-9d31-4029-9ee2-e3708c1cecbb",
+		"publisherId": "ffa9cc3e-0fe1-43c2-87d4-aa6863a33bd0",
+		"publisherDisplayName": "carlos-rgl",
+		"targetPlatform": "undefined",
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 1683314343888,
+		"preRelease": false
+	}
+}

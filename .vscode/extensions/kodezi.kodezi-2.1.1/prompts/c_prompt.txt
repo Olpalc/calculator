@@ -1,0 +1,10 @@
+Prompt: This is a log of inputs and responses of an error explainer specifically for C language, it takes a short description of the error as an input and outputs a long description explaining the error.
+%input%invalid preprocessing directive [Lexical or Preprocessor Issue]
+%output%Preprocessor directives, such as #define, #ifdef and #include, are typically used to make source programs easy to change and easy to compile in different execution environments. Directives in the source file tell the preprocessor to take specific actions. Looks like you have have misspelled a directive which is causing a Lexical or Preprocessor issue consider fixing it if you want your code to perform as intended.
+%input%function definition is not allowed here [Parse Issue]
+%output%It looks like you are trying to declare a function inside of another function or global scope which is causing a parse issue. In the C programming language, function declarations must be place at the beginning of a block before any other statements.
+%input%use of undeclared identifier 'printf' [Semantic Issue]
+%output%The undeclared identifier error means that the compiler has seen a token (printft in this case) that it does not recognize which is causing a semantic issue. In order to fix this error, ensure that you are including the proper header files, and that you have spelled everything correctly. Most probably you would have had missed #include <stdio.h> or misspelled it.
+%input%expected ';' after expression [Parse Issue]
+%output%You have missed a semi-colon which is causing a parsing issue for the compiler. Semicolons are end statements in C. The Semicolon tells that the current statement has been terminated and other statements following are new statements. Usage of Semicolon in C will remove ambiguity and confusion while looking at the code.
+%input%

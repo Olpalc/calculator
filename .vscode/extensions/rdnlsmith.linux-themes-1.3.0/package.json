@@ -1,0 +1,90 @@
+{
+	"name": "linux-themes",
+	"displayName": "Linux Themes for VS Code",
+	"description": "Color themes designed to match the popular Ubuntu themes.",
+	"version": "1.3.0",
+	"publisher": "rdnlsmith",
+	"icon": "icon.png",
+	"license": "GPL-3.0",
+	"scripts": {
+		"start": "code . --extensionDevelopmentPath=\"$(pwd)\" && npx gulp watch",
+		"vscode:prepublish": "npx gulp"
+	},
+	"repository": {
+		"type": "GitHub",
+		"url": "https://github.com/rdnlsmith/vscode-arc-theme"
+	},
+	"engines": {
+		"vscode": "^1.12.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"label": "Adapta Nokto",
+				"uiTheme": "vs-dark",
+				"path": "./themes/dark/adapta-nokto.json"
+			},
+			{
+				"label": "Ambiance [beta]",
+				"uiTheme": "vs-dark",
+				"path": "./themes/dark/ambiance.json"
+			},
+			{
+				"label": "Arc Dark",
+				"uiTheme": "vs-dark",
+				"path": "./themes/dark/arc-dark.json"
+			},
+			{
+				"label": "United GNOME",
+				"uiTheme": "vs-dark",
+				"path": "./themes/dark/united-gnome.json"
+			},
+			{
+				"label": "United Ubuntu",
+				"uiTheme": "vs-dark",
+				"path": "./themes/dark/united-ubuntu.json"
+			},
+			{
+				"label": "Yaru Dark",
+				"uiTheme": "vs-dark",
+				"path": "./themes/dark/yaru-dark.json"
+			},
+			{
+				"label": "Elementary",
+				"uiTheme": "vs",
+				"path": "./themes/light/elementary.json"
+			},
+			{
+				"label": "Yaru",
+				"uiTheme": "vs",
+				"path": "./themes/light/yaru.json"
+			}
+		]
+	},
+	"devDependencies": {
+		"@types/node": "^10.17.26",
+		"glob": "^7.1.6",
+		"gulp": "^4.0.2",
+		"gulp-clean": "^0.4.0",
+		"gulp-run": "^1.7.1",
+		"gulp-typescript": "^5.0.1",
+		"through2": "^3.0.2",
+		"typescript": "^3.9.6",
+		"vinyl-file": "^3.0.0",
+		"vscode-theme-generator": "0.1.5"
+	},
+	"__metadata": {
+		"id": "13b42b35-fe09-43ca-9c59-074a3ccd8dad",
+		"publisherId": "17338b52-e7ec-4f5f-918b-953b99735794",
+		"publisherDisplayName": "rdnlsmith",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 1677910397860,
+		"preRelease": false
+	}
+}

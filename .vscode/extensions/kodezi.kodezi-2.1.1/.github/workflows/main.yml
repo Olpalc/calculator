@@ -1,0 +1,43 @@
+name: Kodezi Extension
+run-name: Deploy Extension
+on:
+  push:
+    branches:
+      - main
+      - development
+env:
+  BASEURL: ${{ secrets.BASEURL }}
+  CODEX_URL: ${{ secrets.CODEX_URL }}
+  OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+  AITEST_URL: ${{ secrets.AITEST_URL }}
+  AWSKODEX: ${{ secrets.AWSKODEX }}
+  TOOLAPIS: ${{ secrets.TOOLAPIS }}
+  TOOLAPI: ${{ secrets.TOOLAPI }}
+  MIXPANEL_TOKEN: ${{ secrets.MIXPANEL_TOKEN }}
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+      - name: Install
+        run: npm install
+      - name: Install vsce
+        run: npm install -g @vscode/vsce
+      - name: Publish
+        run: npm run deploy
+        if: success() && github.ref == 'refs/heads/main'
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}
+      - name: Publish Pre Release
+        run: npm run pre-release
+        if: success() && github.ref == 'refs/heads/development'
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}

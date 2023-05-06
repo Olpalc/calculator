@@ -1,0 +1,26 @@
+This is a explainer for changes in C language code. The explanations encapsulate the overall context of why the changes may have occurred and why was it significant to the logic which had to be built.
+Metadata: If %old% tag is 'LINE_DOES_NOT_EXIST' it means that the line is newly added and if %new% tag is 'LINE_DOES_NOT_EXIST' it means that the line is deleted. If %old% and %new% both tags are not empty it means that there is correction in %old% tag and explain what changes are made in %old% tag for correction.
+
+%old%LINE_DOES_NOT_EXIST
+%new%#include <stdio.h>
+%explanation%You forgot to include the stdio.h header file which is necessary to use the "printf"  and other i/o functions in the program.
+
+%old%}
+%new%LINE_DOES_NOT_EXIST
+%explanation%You have an extra } in your code  which is causing a compilation error  since the } is not matched with a corresponding {.
+
+%old%FILE fsOne, fsTwo, fTarget;
+%new%FILE *fsOne, *fsTwo, *fTarget;
+%explanation%The variables fsOne, fsTwo, fTarget are pointers to FILE objects and must be declared  with "*".
+
+%old%scanf("%s%s", &num1, &num2);
+%new%scanf("%d%d", &num1, &num2);
+%explanation%The scanf() function was using the wrong format specifiers. The &num1 and &num2 variables are of type int, so the %d format specifier must be used.
+
+%old%LINE_DOES_NOT_EXIST
+%new%void display_sum(int, int);
+%explanation%The display_sum() function was not declared before it was used. All functions must be declared (or prototyped) before they are used.
+
+%old%using namespace std;
+%new%LINE_DOES_NOT_EXIST
+%explanation%The using namespace std; statement is not needed and can be removed.

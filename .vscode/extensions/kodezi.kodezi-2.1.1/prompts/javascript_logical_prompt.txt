@@ -1,0 +1,26 @@
+This is a explainer for changes in JavaScript code. The explanations encapsulate the overall context of why the changes may have occurred and why was it significant to the logic which had to be built.
+Metada: If %old%  tag is LINE_DOES_NOT_EXIST it means that the line is newly added and if %new% tag is LINE_DOES_NOT_EXIST it means that the line is deleted. If %old% and %new% both are not empty it means there is correction in %old% and explain what changes are made in %old% for correction.
+
+%old%ren cunt
+%new%return count;
+%explanation%This is a correction where the line "ren cunt" was changed to "return count". The reason for this is that the word "cunt" is not defined in current context and has been replaced with "count" because it is defined in current context, also there is mistake where you misspell the 'return' as 'ren'.
+
+%old%}
+%new%LINE_DOES_NOT_EXIST
+%explanation%You have extra '}' in your code, To fix the code remove this extra '}'
+
+%old%conole.lg(`The factorial of ${number} is {fact}.`);}
+%new%console.log(`The factorial of ${number} is ${fact}.`);
+%explanation%You have misspell the 'console.log' and also you forget to add '$' to manipulate string and because of that the '{fact}' is return in pure string instead of value of fact.
+ 
+%old%else{{
+%new%else{
+%explanation%You have extra '{' in your code, To fix the code remove this extra '{'
+
+%old%console(newObj);
+%new%console.log(newObj);
+%explanation%You forget '.log' to print output on console, that cause issues in your code, add this correction to prevent any issues.
+
+%old%set_Call()
+%new%set_call()
+%explanation%This is a correction where the line "set_Call()" was changed to "set_call()". The reason for this is that the word "Call" is not defined in current context and has been replaced with "call" because it is defined in current context.

@@ -1,0 +1,30 @@
+{
+  "dry-run": false,
+  "verbose": false,
+  "force": true,
+  "non-interactive": true,
+  "increment": "minor",
+  "beforeChangelogCommand": "auto-changelog",
+  "safeBump": false,
+  "src": {
+    "commitMessage": "🚀 Release %s",
+    "tagAnnotation": "🚀 Release %s"
+  },
+  "npm": {
+    "publish": false
+  },
+  "github": {
+    "release": true,
+    "releaseName": "🚀 %s"
+  },
+  "prompt": {
+    "src": {
+      "status": true,
+      "commit": true,
+      "tag": true,
+      "push": true,
+      "release": true,
+      "publish": true
+    }
+  }
+}

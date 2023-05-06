@@ -1,0 +1,281 @@
+{
+	"name": "kodezi",
+	"displayName": "Kodezi AI, (Autocorrect & More) - for Python, JavaScript, TypeScript, C++, PHP, Java, C#, Ruby & more",
+	"description": "Kodezi is an AI Dev-tool platform providing tools to maximize programming productivity. Our first product consists of an autocorrect for programmers.",
+	"publisher": "kodezi",
+	"icon": "resources/KodeziExtensionLogo.png",
+	"version": "2.1.1",
+	"homepage": "https://kodezi.com",
+	"galleryBanner": {
+		"color": "#100f11",
+		"theme": "dark"
+	},
+	"badges": [
+		{
+			"url": "https://dcbadge.vercel.app/api/server/kodezi?style=social",
+			"description": "Join Community",
+			"href": "https://discord.gg/kodezi"
+		},
+		{
+			"url": "https://img.shields.io/twitter/follow/kodezihq?style=social",
+			"description": "Follow Kodezi on Twitter",
+			"href": "https://twitter.com/kodezihq"
+		},
+		{
+			"url": "https://img.shields.io/visual-studio-marketplace/r/kodezi.kodezi?logo=visual-studio-code&style=social",
+			"description": "Rate us in VSCode Marketplace",
+			"href": "https://marketplace.visualstudio.com/items?itemName=kodezi.kodezi"
+		},
+		{
+			"url": "https://img.shields.io/youtube/channel/views/UCrw0CEXixhbouv3GICHhV5w?style=social",
+			"description": "Subscribe Kodezi Youtube Channel",
+			"href": "https://www.youtube.com/UCrw0CEXixhbouv3GICHhV5w"
+		}
+	],
+	"keywords": [
+		"debugging",
+		"optimizing",
+		"conversion",
+		"line by line comments",
+		"docstring",
+		"code summary",
+		"code generation",
+		"ai-tools",
+		"javascript",
+		"python",
+		"typescript",
+		"codegpt",
+		"chatgpt",
+		"php",
+		"ruby",
+		"java",
+		"go",
+		"golang",
+		"bash",
+		"kotlin",
+		"html",
+		"css",
+		"ocaml",
+		"perl",
+		"rust",
+		"julia",
+		"lua",
+		"haskell",
+		"c",
+		"cpp",
+		"c++",
+		"csharp",
+		"c#",
+		"react",
+		"swift",
+		"objective-c",
+		"objectivec",
+		"ai",
+		"nodejs",
+		"node",
+		"node.js"
+	],
+	"repository": {
+		"url": "https://github.com/Kodezi/kodezi-extension.git"
+	},
+	"bugs": {
+		"url": "https://github.com/Kodezi/kodezi-extension/issues",
+		"email": "support@kodezi.com"
+	},
+	"engines": {
+		"vscode": "^1.74.0"
+	},
+	"categories": [
+		"Linters",
+		"Programming Languages",
+		"Debuggers",
+		"Extension Packs",
+		"Machine Learning"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"main": "./dist/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "kodezi.webview",
+				"title": "Start new webview session"
+			},
+			{
+				"command": "kodezi.chatbot",
+				"title": "Start new chatbot session"
+			},
+			{
+				"command": "kodezi.debugging",
+				"title": "Debugging"
+			},
+			{
+				"command": "kodezi.optimizing",
+				"title": "Optimizing"
+			},
+			{
+				"command": "kodezi.translating",
+				"title": "Translating"
+			},
+			{
+				"command": "kodezi.documenting",
+				"title": "Generate Documentation"
+			},
+			{
+				"command": "kodezi.coding",
+				"title": "Generate Code"
+			}
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"command": "kodezi.debugging",
+					"group": "7_modification",
+					"when": "authenticatedvar"
+				},
+				{
+					"command": "kodezi.optimizing",
+					"group": "7_modification",
+					"when": "authenticatedvar"
+				},
+				{
+					"command": "kodezi.translating",
+					"group": "7_modification",
+					"when": "authenticatedvar"
+				},
+				{
+					"command": "kodezi.documenting",
+					"group": "7_modification",
+					"when": "authenticatedvar"
+				},
+				{
+					"command": "kodezi.coding",
+					"group": "7_modification",
+					"when": "authenticatedvar"
+				}
+			]
+		},
+		"icons": {
+			"kodezi-logo-icon": {
+				"description": "Kodezi icon",
+				"default": {
+					"fontPath": "./KodeziIcon.woff",
+					"fontCharacter": "\\41"
+				}
+			}
+		},
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "package-explorer",
+					"title": "KODEZI CODE",
+					"icon": "resources/package-explorer.svg"
+				}
+			]
+		},
+		"views": {
+			"package-explorer": [
+				{
+					"id": "kodezi-ai-primary",
+					"type": "webview",
+					"name": "KODEZI AI"
+				},
+				{
+					"id": "kodezi-ai-quick",
+					"type": "webview",
+					"name": "QUICK ACCESS"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run package",
+		"deploy": "vsce publish",
+		"pre-release": "vsce publish --pre-release",
+		"compile": "webpack",
+		"watch": "webpack --watch",
+		"package": "webpack --mode production --devtool hidden-source-map",
+		"compile-tests": "tsc -p . --outDir out",
+		"watch-tests": "tsc -p . -w --outDir out",
+		"pretest": "npm run compile-tests && npm run compile && npm run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@emotion/react": "^11.10.5",
+		"@emotion/styled": "^11.10.5",
+		"@types/axios": "^0.14.0",
+		"@types/diff": "^5.0.2",
+		"@types/difflib": "^0.2.1",
+		"@types/dotenv": "^8.2.0",
+		"@types/glob": "^8.0.0",
+		"@types/lodash": "^4.14.191",
+		"@types/mocha": "^10.0.0",
+		"@types/node": "16.x",
+		"@types/react": "^18.0.26",
+		"@types/react-dom": "^18.0.9",
+		"@types/react-syntax-highlighter": "^15.5.6",
+		"@types/string-similarity": "^4.0.0",
+		"@types/uuid": "^9.0.0",
+		"@types/vscode": "^1.74.0",
+		"@typescript-eslint/eslint-plugin": "^5.42.0",
+		"@typescript-eslint/parser": "^5.42.0",
+		"@vscode/test-electron": "^2.2.0",
+		"eslint": "^8.26.0",
+		"glob": "^8.0.3",
+		"html-webpack-plugin": "^5.5.0",
+		"loadash": "^1.0.0",
+		"mocha": "^10.1.0",
+		"path-browserify": "^1.0.1",
+		"process": "^0.11.10",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"ts-loader": "^9.4.1",
+		"typescript": "^4.8.4",
+		"webpack": "^5.74.0",
+		"webpack-cli": "^4.10.0",
+		"webpack-dev-server": "^4.11.1"
+	},
+	"dependencies": {
+		"@devbookhq/splitter": "^1.4.0",
+		"@monaco-editor/react": "^4.4.6",
+		"@mui/icons-material": "^5.10.16",
+		"@mui/material": "^5.10.17",
+		"axios": "^1.2.1",
+		"compute-cosine-similarity": "^1.0.0",
+		"connectivity": "^1.0.2",
+		"copy-webpack-plugin": "^11.0.0",
+		"cors": "^2.8.5",
+		"diff": "^5.1.0",
+		"difflib": "^0.2.4",
+		"dotenv": "^16.0.3",
+		"express": "^4.18.2",
+		"form-data": "^4.0.0",
+		"gpt3-tokenizer": "^1.1.4",
+		"json-easy-strip": "^1.0.6",
+		"jwt-decode": "^3.1.2",
+		"mixpanel": "^0.17.0",
+		"monaco-editor-textmate": "^4.0.0",
+		"monaco-textmate": "^3.0.1",
+		"onigasm": "^2.2.5",
+		"openai": "^3.1.0",
+		"react-syntax-highlighter": "^15.5.0",
+		"socket.io": "^4.6.0",
+		"socket.io-client": "^4.6.0",
+		"string-similarity": "^4.0.4",
+		"svg-url-loader": "^8.0.0",
+		"uuid": "^9.0.0",
+		"vscode-theme-to-monaco-theme-web": "^1.0.0"
+	},
+	"__metadata": {
+		"id": "4193a393-b71a-4530-9323-bad3a65fef94",
+		"publisherId": "3a0487ea-758c-4b92-be76-11624547b36c",
+		"publisherDisplayName": "Kodezi",
+		"targetPlatform": "undefined",
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 1683224660586,
+		"preRelease": false
+	}
+}
