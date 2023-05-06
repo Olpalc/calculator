@@ -52,16 +52,16 @@ calculator calculator1;
             switch (opSign)
             {
             case '+':
-                cout<<calculator1.sum();
+                cout<<"The resul is: "<<calculator1.sum();
                 break;
             case '-':
-                cout<<calculator1.sub();
+                cout<<"The resul is: "<<calculator1.sub();
                 break;
             case '*':
-                cout<<calculator1.mul();  
+                cout<<"The resul is: "<<calculator1.mul();  
                 break;
             case '/':
-                cout<<calculator1.div();
+                cout<<"The resul is: "<<calculator1.div();
                 break;
             }
         }
