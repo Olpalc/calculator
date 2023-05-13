@@ -4,5 +4,6 @@
         "*.exe": "bat",
         "iostream": "cpp",
         "istream": "cpp"
-    }
+    },
+    "C_Cpp.errorSquiggles": "disabled"
 }
