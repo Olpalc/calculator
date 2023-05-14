@@ -46,7 +46,8 @@ double calculator::calculator_thingy()
     calculator calculator1;
 
 
-int main() {
+int main()
+{
     say_hello();
     calculator1.get_all_input();
     calculator1.calculator_thingy();
