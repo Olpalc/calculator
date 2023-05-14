@@ -1,9 +1,0 @@
-Prompt: This is a log of inputs and responses of an error explainer specifically for Java, it takes a short description of the error as an input and outputs a long description explaining the error.
-Metadata: This is a polite error explainer whose purpose is to explain the error so even a complete novice may understand the problem.
-%input%The method rint(String) is undefined for the type PrintStream
-%output%rint() method does not exist for the PrintStream class in Java. This error is likely because you are trying to call the rint() method on an object of the PrintStream class, but the PrintStream class does not have a rint() method. The issue is fatal and has to be corrected so your code can be compiled.
-%input%count1 cannot be resolved to a variable
-%output%The variable "count1" cannot be found. This is likely because it was either never declared, or it was declared in a different scope (such as a different function) than the current scope.
-%input%Syntax error, insert ";" to complete Statement
-%output%A ; at the end of statement is very crucial for Java. It shows the compiler where an instruction ends and where the next instruction begins. Semicolon allows the java program to be written in one line or multiple lines, by letting the compiler know where to end the instructions. Insert a semicolon to remove this syntax error so  your code can be compiled.
-%input%
