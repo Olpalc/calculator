@@ -53,13 +53,13 @@ double calculator::calculator_thingy()
         std::cout << "The result is : " << num1 + num2 << " \n";
         break;
     case '-':
-        std::cout << "The result is : " << num1 - num2;
+        std::cout << "The result is : " << num1 - num2<< " \n";
         break;
     case '*':
-        std::cout << "The result is : " << num1 - num2;
+        std::cout << "The result is : " << num1 * num2<< " \n";
         break;
     case '/':
-        std::cout << "The result is : " << num1 - num2;
+        std::cout << "The result is : " << num1 / num2<< " \n";
         break;
         return 0;
     }
@@ -82,7 +82,5 @@ int main()
         calculator1.get_all_input();
         calculator1.calculator_thingy();
     }
-    
-    std::cout << "ok\n";
     return 0;
 }
