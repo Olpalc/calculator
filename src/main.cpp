@@ -70,8 +70,19 @@ double calculator::calculator_thingy()
 int main()
 {
     say_hello();
-    calculator1.get_all_input();
-    calculator1.calculator_thingy();
+    std::cout<<"How many times would you like to calculate? : ";
+    std::cin>>calculator1.num_of_tries;
+    for (int times_run = 0; times_run < calculator1.num_of_tries ; times_run++)
+    {
+        if (times_run == calculator1.num_of_tries -1)
+        {
+            std::cout<<"This is your last one!\n";
+        }
+        
+        calculator1.get_all_input();
+        calculator1.calculator_thingy();
+    }
+    
     std::cout << "ok\n";
     return 0;
 }
