@@ -31,7 +31,7 @@ void say_hello()
 
 void calculator::get_all_input()
 {
-    std::cout << "Enter the first number: ";
+    std::cout << " - Enter the first number: ";
     std::cin >> num1;
     std::cout << "Enter the second number: ";
     std::cin >> num2;
@@ -76,7 +76,7 @@ int main()
     {
         if (times_run == calculator1.num_of_tries -1)
         {
-            std::cout<<"This is your last one!\n";
+            std::cout<<"--This is your last one!--\n";
         }
         
         calculator1.get_all_input();
